@@ -18,14 +18,19 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
                    
-          script: |     
-             if [ ! -d ~/skill-meter-project ]; then
+          script: |    
+           set -e
+
+           set -x
+
+           if [ ! -d ~/skill-meter-project ]; then
              git clone ${{ github.server_url }}/${{ github.repository }}.git ~/skill-meter-project
              fi
              cd ~/skill-meter-project
              git pull origin main
+             ls -la
              if [ ! -f .env ]; then
-               echo "ERROR: ~/skill-meter-project/.env is missing. create it with DOCKERHUB_USERNAME and DB credentials."
+               echo "ERROR: .env is missing"
                exit 1
              fi 
              docker compose pull
