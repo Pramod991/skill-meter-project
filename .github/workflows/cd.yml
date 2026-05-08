@@ -20,13 +20,13 @@ jobs:
                   
                   script: |
                            
-                    if [ ! -d ~/skillpulse ]; then
-                      git clone ${{ github.server_url }}/${{ github.repository }}.git ~ /skillpulse
+                    if [ ! -d ~/skill-meter-project ]; then
+                      git clone ${{ github.server_url }}/${{ github.repository }}.git ~ /skill-meter-project
                       fi
-                      cd ~/skillpulse
+                      cd ~/skill-meter-project
                       git pull origin main
                     if [ ! -f .env ]; then
-                        echo "ERROR: ~/skillpulse/.env is missing. create it with DOCkERHUB_USERNAME and DB credentials."
+                        echo "ERROR: ~/skill-meter-project/.env is missing. create it with DOCkERHUB_USERNAME and DB credentials."
                      exit 1
                      fi
 
