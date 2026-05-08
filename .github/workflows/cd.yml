@@ -25,10 +25,9 @@ jobs:
              cd ~/skill-meter-project
              git pull origin main
              if [ ! -f .env ]; then
-               echo "ERROR: ~/skill-meter-project/.env is missing. create it with DOCkERHUB_USERNAME and DB credentials."
+               echo "ERROR: ~/skill-meter-project/.env is missing. create it with DOCKERHUB_USERNAME and DB credentials."
                exit 1
-             fi
-
+             fi 
              docker compose pull
              docker compose up -d
              docker image prune -f
