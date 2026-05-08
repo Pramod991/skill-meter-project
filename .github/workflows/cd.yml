@@ -20,7 +20,7 @@ jobs:
                    
           script: |     
              if [ ! -d ~/skill-meter-project ]; then
-             git clone ${{ github.server_url }}/${{ github.repository }}.git ~ /skill-meter-project
+             git clone ${{ github.server_url }}/${{ github.repository }}.git ~/skill-meter-project
              fi
              cd ~/skill-meter-project
              git pull origin main
